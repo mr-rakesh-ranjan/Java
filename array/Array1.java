@@ -1,8 +1,14 @@
+//Reverse the array
+
+
 package array;
 
 import java.util.Scanner;
 
 public class Array1 {
+	
+
+	//print array function
 	static void printArr(int a[]){
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i]+ " ");
@@ -18,8 +24,10 @@ public class Array1 {
             System.out.print("Enter the " + i+ " element of array");
             arr[i] = sc.nextInt();
         }
-        printArr(arr);
         sc.close();
+        printArr(arr); //call the printArr function
+        
+        
     }
     
 
