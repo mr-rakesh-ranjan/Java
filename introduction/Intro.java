@@ -8,6 +8,7 @@ public class Intro {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		String s =  sc.next();
+		sc.close();
 		if(n<27 && n >= 1){
 			System.out.println("this is integer");
 		}
