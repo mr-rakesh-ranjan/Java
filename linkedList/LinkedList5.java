@@ -4,7 +4,7 @@
  */
 package linkedList;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * @author rakes
@@ -12,18 +12,6 @@ import java.util.Scanner;
  */
 public class LinkedList5 {
 	
-	// function for insert at the end
-	public static Node insertEnd(Node head, int x){
-		Node temp = new Node(x);
-		if(head == null)
-			return temp;
-		Node curr = head;
-		while(curr.next != null) {
-			curr = curr.next;
-		}
-		curr.next = temp;
-		return head;
-	}
 	
 	// Function for "Delete first Node in a singly linked list".
 	public static Node delHead(Node head) {
@@ -40,9 +28,10 @@ public class LinkedList5 {
 		if(head.next == null)
 			return null;
 		Node curr = head;
-		while(curr.next != null)
+		while(curr.next != null) {
 			curr = curr.next;
-		curr.next = null;
+			curr.next = null;
+		}
 		return head;
 	}
 	
@@ -54,28 +43,16 @@ public class LinkedList5 {
 			curr = curr.next;
 		}
 	}
-
+	
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the size of linked list");
-		int l = sc.nextInt();
-		Node head = null;
-		for(int i = 1; i<=l; i++) {
-			System.out.println("Enter the " + i + " element of your Linked List");
-			int n = sc.nextInt();
-			head = insertEnd(head, n);
-		}
-		sc.close();
-		System.out.println("Your linked list is ");
-		printList(head);
-		delHead(head);
-		System.out.println();
-		System.out.println("your list after the deletion of head node");
+		Node head = new Node(10);
+		head.next = new Node(20);
+		head.next.next = new Node(30);
+		System.out.println("List after deleting head Node");
 		printList(delHead(head));
-		
-		
-		
-
+		System.out.println();
+		System.out.println("List after deleting tail node");
+		printList(delTail(head));
 	}
 
 }
