@@ -15,7 +15,7 @@ package linkedList;
 public class Linkedlist8 {
 	
 	
-
+	//Naive solution for printing middle node of given linked list
 	public static void printMiddle(Node head) {
 		if(head == null)
 			return;
@@ -25,8 +25,20 @@ public class Linkedlist8 {
 			count++;
 		for(int i = 0; i<count/2; i++)
 			 curr  = curr.next;
-		System.out.println(curr.data);
-		
+		System.out.println(curr.data);	
+	}
+	
+	//Efficient solution for printing middle node of given linked list
+	public static void printMid(Node head) {
+		if(head == null)
+			return;
+		Node slow = head;
+		Node fast = head;
+		while(fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		System.out.println(slow.data);
 	}
 
 	public static void main(String[] args) {
@@ -35,7 +47,7 @@ public class Linkedlist8 {
 		head.next.next = new Node(15);
 		head.next.next.next = new Node(25);
 		head.next.next.next.next = new Node(20);
-		printMiddle(head);
+		printMid(head);
 
 	}
 

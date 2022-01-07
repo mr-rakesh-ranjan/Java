@@ -34,6 +34,8 @@ public class LinkedList6 {
 	public static void main(String[] args) {
 		Node head = new Node(2);
 		head = insertPosition(head, 2, 60);
+		head = insertPosition(head, 2, 99);
+		head = insertPosition(head, 2, 45);
 		printList(head);
 		
 
